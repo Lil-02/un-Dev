@@ -157,8 +157,8 @@ export class unSdg extends DDDSuper(LitElement) {
         }
   
         .calendar-item-img.color-only {
-          background-image: none; /* Ensure no image is shown when colorOnly is true */
-          background-color: var(--your-background-color, #f0f0f0); /* Set your desired background color */
+          background-size: 10000% !important; /* Zoom effect */
+          background-position: 0 0 !important;
         }
   
         .calendar-item-link {
