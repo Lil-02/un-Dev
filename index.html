@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Demonstration for un-sdg">
+
+  <style>
+    :root,
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #demo {
+      margin: 20px; /* Changed to explicit value */
+    }
+
+    un-sdg {
+      margin: 20px; /* Changed to explicit value */
+      border: 1px solid #ccc; /* Added default border */
+      border-radius: 10px; /* Added default border-radius */
+    }
+
+
+    #example {
+      font-size: 1.2em; /* Example font size */
+      background-color: lightgray; /* Example background color */
+      color: black; /* Example text color */
+    }
+
+    #randomize-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+  </style>
+  <title>un-sdg</title>
+</head>
+
+<body>
+  <div id="demo">
+    <h1>UN SDG</h1>
+    <h2>Colorless Randomization</h2>
+    
+    <un-sdg goal="1" colorOnly="true" id="top_goal"></un-sdg>
+    <button id="randomize-button">Randomize Goal</button>
+    
+    <h2>Display All</h2>
+    <un-sdg></un-sdg>
+    
+    <h2>Display All [Color Only]</h2>
+    <un-sdg colorOnly="true"></un-sdg>
+
+    <h2>Resized</h2>
+    <un-sdg goal="8" itemHeight="100px" itemWidth="100px"></un-sdg>
+    
+    <h2>Circle</h2>
+    <un-sdg goal="circle"></un-sdg>
+  </div>
+
+  <script type="module" src="./src/un-sdg.js"></script>
+  <script type="module">
+    document.getElementById('randomize-button').addEventListener('click', () => {
+      const randomGoal = Math.floor(Math.random() * 17) + 1; 
+      const topGoalElement = document.getElementById('top_goal');
+      topGoalElement.setAttribute('goal', randomGoal);
+    });
+  </script>
+  
+</body>
+</html>
